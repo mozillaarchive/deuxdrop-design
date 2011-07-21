@@ -1,0 +1,224 @@
+<!DOCTYPE >
+<html>
+<head>
+
+    <title>Deuxdrop UI</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen"> 
+    <script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script> 
+    <script src="js/functions.js" type="text/javascript" charset="utf-8"></script> 
+
+</head>
+<body>
+    
+    <div id="wrapper">
+        <!-- header element -->
+        <div id="header" class="hbox">
+        
+            <button class="back">Back</button>
+            
+            <div class="boxFlex">
+                <h1 id="navTitle" class="overflow">Header</h1>
+            </div>
+            
+            <button class="next">Info</button>
+            
+        </div>
+        
+        <!-- sub header (used to display view specific items, 
+        such as search or people involved in group chat) -->
+        
+        
+        <div id="subHeader">
+            <div class="participants">
+                <span class="author">
+                    James Burke
+                </span>
+                <span class="invitees">
+                    <a href="#">+ 3 others</a>
+                </span>
+            </div>
+        </div>
+        
+        <div id="subHeader" class="hbox">
+            <div class="boxFlex">
+                <input id="search" type="text" placeholder="search conversation">
+            </div>
+            <button class="search">search</button>
+            <button class="notify">new group</button>
+        </div>
+        
+        <!-- loading -->
+        <div id="loading">
+            <img src="i/loader.gif"> &nbsp; updating&hellip;
+        </div>
+        
+        <!-- private inbox list view -->
+        <ul id="privateInbox" class="conversations">
+            <li class="private unread hbox">
+                <div class="avatar">
+                    <img src="i/avatar.png">
+                </div>
+                <div class="msgPreview boxFlex">
+                    <div class="msgPreviewHeader hbox">
+                        <span class="author boxFlex overflow">Andy Chung</span>
+                        <span class="new">(5)</span>
+                        <span class="boxFlexStrong"></span>
+                        <span class="time">5 min</span>
+                    </div>
+                    <div class="hbox">
+                        <span class="snippet boxFlex overflow">
+                            This is a snippet of text from the latest msg
+                        </span>
+                    </div>
+                </div>
+            </li>
+            <li class="private read hbox">
+                <div class="avatar">
+                    <img src="i/avatar2.png">
+                </div>
+                <div class="msgPreview boxFlex">
+                    <div class="msgPreviewHeader hbox">
+                        <span class="author overflow boxFlex">James Burke</span>
+                        <span class="boxFlexStrong"></span>
+                        <span class="time">12 min</span>
+                    </div>
+                    <div class="hbox">
+                        <span class="snippet boxFlex overflow">
+                            This is a snippet of text from the latest msg
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        
+        <!-- group inbox list view -->
+        <ul id="groupInbox" class="conversations">
+            
+            <li class="public unread hbox">
+                <div class="avatar">
+                    <img src="i/group.png">
+                </div>
+                <div class="msgPreview boxFlex">
+                    <div class="msgPreviewHeader hbox">
+                        <span class="author boxFlex overflow">Riley, Andy, James, Bryan</span> 
+                        <span class="participants">&amp; 10 others</span>
+                        <span class="new">(2)</span>
+                        <div class="boxFlexStrong"></div>                       
+                        <span class="time">23 min</span>
+                    </div>
+                    <div class="hbox">
+                        <div class="snippet boxFlex overflow">
+                            This is a snippet of text from the latest msg
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="public read hbox">
+                <div class="avatar">
+                    <img src="i/group.png">
+                </div>
+                <div class="msgPreview boxFlex">
+                    <div class="msgPreviewHeader hbox">
+                        <span class="author boxFlex overflow">Andy, David, Bryan</span> 
+                        <div class="boxFlexStrong"></div>                       
+                        <span class="time">23 min</span>
+                    </div>
+                    <div class="hbox">
+                        <div class="snippet boxFlex overflow">
+                            This is a snippet of text from the latest msg
+                        </div>
+                    </div>
+                </div>
+            </li>  
+        </ul>
+        
+        <!-- conversation -->
+        
+        <ul id="privateChat" class="conversation">
+            <li class="sender hbox">
+                <div class="avatar">
+                    <img src="i/avatar.png">
+                </div>
+                <div class="msg boxFlex">
+                    <div class="msgHeader hbox">
+                        <span class="author boxFlex overflow">Andy Chung</span>                       
+                        <span class="time">20 sec</span>
+                    </div>
+                    <ul class="messages">
+                        <li class="message">Hey James</li>
+                        <li class="message">What time do you want us to come over to help you move?</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sender hbox">
+                <div class="avatar">
+                    <img src="i/avatar2.png">
+                </div>
+                <div class="msg boxFlex">
+                    <div class="msgHeader hbox">
+                        <span class="author boxFlex overflow">James Burke</span>                       
+                        <span class="time">just now</span>
+                    </div>
+                    <ul class="messages">
+                        <li class="message">Hey</li>
+                        <li class="message">How does 10am sound?</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        
+        <!-- profile/actions/settings -->
+        
+        <div id="profile" class="settings">
+            
+            <div id="userProfileHeader" class="hbox">
+                <div class="avatar">
+                    <img src="i/avatar2.png">
+                </div>
+                <div class="username boxflex overflow">James Burke</div>
+                <div id="actions"><button class="red">remove</button></div>
+            </div>
+            
+            <ul id="menu">
+                <li class="hbox">
+                    <label for="twitter" class="boxflex">Twitter</label>
+                    <div id="twitter"><a href="#">@jrburke</a></div>
+                </li>
+                <li class="hbox">
+                    <label for="email" class="boxflex">Email</label>
+                    <div id="email"><a href="#">jrburke@gmail.com</a></div>
+                </li>
+                <li class="hbox">
+                    <label for="url" class="boxflex">URL</label>
+                    <div id="url"><a href="#">requirejs.org</a></div>
+                </li>
+            </ul>
+        
+        </div>
+        
+        <!-- compose -->
+        <div id="compose" class="hbox">
+            <div class="boxFlex">
+                <input type="text" placeholder="say hello">
+            </div>
+            <button>send</button>
+        </div>
+        
+        <!-- alert to be used for notifications or errors -->
+        <div id="alert">
+            <div class="notificationWrapper">
+                <div class="notification">
+                    <p>You will no longer receive updates from this group.</p>
+                    <p>Do you wish to continue?</p>
+                    <button class="red">Yes, I'd like to leave</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+</body>
+</html>
