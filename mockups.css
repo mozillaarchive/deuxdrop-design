@@ -12,3 +12,9 @@
 #wrapper .mobile {
     height: 480px;
 }
+
+#wrapper #compose {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
