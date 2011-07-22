@@ -28,7 +28,7 @@
 </head>
 <body>
     
-    <div id="wrapper">
+    <div id="wrapper" class="mobile">
         <!-- header element -->
         <div id="header" class="hbox">
             <button class="back">Back</button>
@@ -41,7 +41,7 @@
 
         <div class="subHeader hbox">
             <div class="boxFlex">
-                <input id="search" type="text" placeholder="search messages">
+                <input id="search" type="text" placeholder="search conversation">
             </div>
             <button class="search">search</button>
         </div>
@@ -49,8 +49,9 @@
         <ul id="privateChat" class="conversation">
             <li class="sender hbox" data-person="Andy Chung">
                 <div>
-                    <div class="avatar"><img src="i/andy.png"></div>
-                </div>
+                    <div class="avatar">
+                        <img src="i/andy.png">
+                    </div>
                 <div class="msg boxFlex">
                     <div class="msgHeader hbox">
                         <span class="author boxFlex overflow">Andy Chung</span>                       
@@ -64,7 +65,9 @@
             </li>
             <li class="sender hbox" data-person="James Burke">
                 <div>
-                    <div class="avatar"><img src="i/james.png"></div>
+                    <div class="avatar">
+                        <img src="i/james.png">
+                    </div>
                 </div>
                 <div class="msg boxFlex">
                     <div class="msgHeader hbox">
