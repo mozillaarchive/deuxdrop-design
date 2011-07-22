@@ -95,7 +95,11 @@ a {
                             color-stop(100%, #1a1a1a)
                       );
 
-    background-image: -moz-linear-gradient(center top, #595959 0%, #444444 50%, #404040 50%, #1A1A1A 100%);    
+    background-image: -moz-linear-gradient(center top,
+                                           #595959 0%,
+                                           #444444 50%,
+                                           #404040 50%,
+                                           #1A1A1A 100%);
 }
 
 #header button {
@@ -130,7 +134,11 @@ a {
                             color-stop(100%, #1F1F1F)
                       );
                       
-    background-image: -moz-linear-gradient(center top , #828282 0%, #565656 50%, #4D4C4C 50%, #1F1F1F 100%);
+    background-image: -moz-linear-gradient(center top,
+                                           #828282 0%,
+                                           #565656 50%,
+                                           #4D4C4C 50%,
+                                           #1F1F1F 100%);
 }
 
 #header #navTitle {
@@ -143,7 +151,7 @@ a {
     text-align: center;
 }
 
-#subHeader,
+.subHeader,
 #compose {
     height: 34px;
     line-height: 24px;
@@ -156,7 +164,7 @@ a {
     z-index: 100;
 }
 
-#subHeader {
+.subHeader {
     border-bottom: 1px solid #aaa;
     
     -webkit-box-shadow: 0 2px 0 rgba(150, 150, 150, 0.15);
@@ -195,7 +203,7 @@ a {
     vertical-align: middle;
 }
 
-#subHeader button,
+.subHeader button,
 #compose button {
     background-color: #EEEEEE;
     border-width: 1px;
@@ -224,10 +232,14 @@ a {
                             color-stop(100%, #516B95)
                       );
     
-    background-image: -moz-linear-gradient(center top , #A7BDE0 0%, #8199BF 50%, #708BB5 50%, #516B95 100%);
+    background-image: -moz-linear-gradient(center top ,
+                                           #A7BDE0 0%,
+                                           #8199BF 50%,
+                                           #708BB5 50%,
+                                           #516B95 100%);
 }
 
-#subHeader button.search {
+.subHeader button.search {
     border-radius: 0 3px 3px 0;
     margin: 0;
 }
@@ -466,7 +478,11 @@ ul.conversation {
                             color-stop(100%, #ccc)
                       );
     
-    background-image: -moz-linear-gradient(center top , #fafafa 0%, #f2f2f2 50%, #e6e6e6 50%, #ccc 100%);
+    background-image: -moz-linear-gradient(center top,
+                                           #fafafa 0%,
+                                           #f2f2f2 50%,
+                                           #e6e6e6 50%,
+                                           #ccc 100%);
 }
 
 #alert button.red,
@@ -484,7 +500,11 @@ ul.conversation {
                             color-stop(100%, #C84343)
                       );
     
-    background-image: -moz-linear-gradient(center top , #EA7676 0%, #EA5C5C 50%, #E15050 50%, #C84343 100%);
+    background-image: -moz-linear-gradient(center top,
+                                           #EA7676 0%,
+                                           #EA5C5C 50%,
+                                           #E15050 50%,
+                                           #C84343 100%);
 }
 
 #alert button.green,
@@ -502,7 +522,11 @@ ul.conversation {
                             color-stop(100%, #478248)
                       );
     
-    background-image: -moz-linear-gradient(center top , #70D972 0%, #5CB35E 50%, #49AA4B 50%, #478248 100%)
+    background-image: -moz-linear-gradient(center top,
+                                           #70D972 0%,
+                                           #5CB35E 50%,
+                                           #49AA4B 50%,
+                                           #478248 100%)
 }
 
 .settings button {
