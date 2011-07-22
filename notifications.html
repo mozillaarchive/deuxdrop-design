@@ -8,7 +8,10 @@
     <script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script> 
     <script type="text/javascript" charset="utf-8">
       $(document).ready(function () {
-        $(".next").css("visibility", "hidden");
+        $(".subHeader.actions").hide();
+        $(".next").click(function () {
+            $(".subHeader.actions").toggle();
+        });
         $(".back").click(function () {
             window.location = "index.html";
         });
@@ -27,11 +30,11 @@
             <div class="boxFlex">
                 <h1 id="navTitle" class="overflow">Notifications</h1>
             </div>
-            <button class="next">Info</button>
+            <button class="next">\/</button>
 
         </div>
 
-        <div class="subHeader hbox">
+        <div class="subHeader hbox actions">
             <div class="boxFlex">
                 <input id="search" type="text" placeholder="search notifications">
             </div>
