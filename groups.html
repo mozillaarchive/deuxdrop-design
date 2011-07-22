@@ -10,11 +10,7 @@
       $(document).ready(function () {
         $(".next").css("visibility", "hidden");
         $(".back").click(function () {
-            if (document.referrer) {
-                window.location = document.referrer;
-            } else {
-                window.location = "index.html";
-            }
+            window.location = "index.html";
         });
         $(".back").click(function () {
         });

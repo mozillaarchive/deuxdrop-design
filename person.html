@@ -10,7 +10,7 @@
       $(document).ready(function () {
         $(".next").css("visibility", "hidden");
         $(".back").click(function () {
-            window.top.location.href = "people.html";
+            window.location = "people.html";
         });
 
         var person = decodeURIComponent(window.location.href.slice(window.location.href.indexOf('?') + 1));

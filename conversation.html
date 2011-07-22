@@ -10,11 +10,7 @@
       $(document).ready(function () {
         $(".next").css("visibility", "hidden");
         $(".back").click(function () {
-            if (document.referrer) {
-                window.location  = document.referrer;
-            } else {
-                window.location = "groups.html";
-            }
+            window.location = "groups.html";
         });
 
         var people = decodeURIComponent(window.location.href.slice(window.location.href.indexOf('?') + 1)).split(",");
