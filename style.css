@@ -294,6 +294,7 @@ ul.conversation {
         background-color: #fff;
         padding: 10px 5px;
         border-bottom: 1px solid #ddd;
+        cursor: pointer;
     }
     
     ul.conversations li .msgPreviewHeader,

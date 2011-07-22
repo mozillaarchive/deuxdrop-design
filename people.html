@@ -10,7 +10,10 @@
       $(document).ready(function () {
         $(".next").css("visibility", "hidden");
         $(".back").click(function () {
-          window.top.location.href = "index.html";
+            window.top.location.href = "index.html";
+        });
+        $("li.private").click(function () {
+            window.top.location.href = "person.html?" + $(this).data("person");
         });
       });
     </script> 
@@ -42,7 +45,7 @@
 
         <!-- private inbox list view -->
         <ul id="privateInbox" class="conversations">
-            <li class="private unread hbox" data-person="andy">
+            <li class="private unread hbox" data-person="Andy Chung">
                 <div class="vbox">
                     <div class="avatar"><img src="i/andy.png"></div>
                     <div class="spacer"></div>
@@ -61,7 +64,7 @@
                     </div>
                 </div>
             </li>
-            <li class="private read hbox" data-person="james">
+            <li class="private read hbox" data-person="James Burke">
                 <div class="vbox">
                     <div class="avatar"><img src="i/james.png"></div>
                     <div class="spacer"></div>
