@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+    <title>Deuxdrop</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen"> 
+    <script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script> 
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function () {
+        $(".next").css("visibility", "hidden");
+        $(".back").click(function () {
+            window.location = "index.html";
+        });
+        $("li.private").click(function () {
+            window.top.location.href = "notification.html?" + $(this).data("person");
+        });
+      });
+    </script> 
+</head>
+<body>
+    
+    <div id="wrapper" class="mobile">
+        <!-- header element -->
+        <div id="header" class="hbox">
+            <button class="back">Back</button>
+            <div class="boxFlex">
+                <h1 id="navTitle" class="overflow">Notifications</h1>
+            </div>
+            <button class="next">Info</button>
+
+        </div>
+
+        <div class="subHeader hbox">
+            <div class="boxFlex">
+                <input id="search" type="text" placeholder="search notifications">
+            </div>
+            <button class="search">search</button>
+        </div>
+
+        <!--<div id="loading">-->
+        <!--    <img src="i/loader.gif"> &nbsp; updating&hellip;-->
+        <!--</div>-->
+
+        <!-- private inbox list view -->
+        <ul id="privateInbox" class="conversations">
+            <li class="private unread hbox" data-person="Andy Chung">
+                <div>
+                    <div class="avatar">
+                        <img src="i/andy.png">
+                    </div>
+                </div>
+                <div class="msgPreview boxFlex">
+                    <div class="msgPreviewHeader hbox">
+                        <span class="author boxFlex overflow">Andy Chung</span>
+                        <span class="boxFlexStrong"></span>
+                        <span class="time">5 min</span>
+                    </div>
+                    <div class="hbox">
+                        <span class="snippet boxFlex overflow">
+                            Hi, we work together so maybe we can chat too
+                        </span>
+                    </div>
+                </div>
+            </li>
+            <li class="private read hbox" data-person="James Burke">
+                <div>
+                    <div class="avatar">
+                        <img src="i/james.png">
+                    </div>
+                </div>
+                <div class="msgPreview boxFlex">
+                    <div class="msgPreviewHeader hbox">
+                        <span class="author overflow boxFlex">James Burke</span>
+                        <span class="boxFlexStrong"></span>
+                        <span class="time">12 min</span>
+                    </div>
+                    <div class="hbox">
+                        <span class="snippet boxFlex overflow">
+                            Please add me to your contacts list
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+</body>
+</html>

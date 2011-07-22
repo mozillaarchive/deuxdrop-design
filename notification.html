@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+    <title>Deuxdrop</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen"> 
+    <script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script> 
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function () {
+        $(".next").css("visibility", "hidden");
+
+        $('button.red').click(function() {
+            $('#alert').addClass('visible');
+        });
+        
+        $('#alert button.cancel').click(function() {
+            $('#alert').removeClass('visible');
+        });
+
+        var person = decodeURIComponent(window.location.href.slice(window.location.href.indexOf('?') + 1));
+        var username = person.split(" ")[0].toLowerCase();
+
+        $(".back").click(function () {
+            window.location = "notifications.html";
+        });
+
+        $("#navTitle, .username").text(person).css("text-transform", "captialize")
+
+        $(".avatar > img").attr("src", "i/" + username + ".png")
+        $("#twitter > a").text("@" + username);
+        $("#email > a").text(person.replace(" ", ".").toLowerCase() + "@gmail.com");
+        $("#url > a").text("http://" + username + "forthewin.com");
+        $(".confirm").text($(".confirm").text().replace("PERSONNAME", person));
+        $("#alert .red").text($("#alert .red").text().replace("PERSONNAME", person));
+      });
+    </script> 
+</head>
+<body>
+    
+    <div id="wrapper" class="mobile">
+        <!-- header element -->
+        <div id="header" class="hbox">
+            <button class="back">Back</button>
+            <div class="boxFlex">
+                <h1 id="navTitle" class="overflow">People</h1>
+            </div>
+            <button class="next">Info</button>
+
+        </div>
+
+        <!-- profile/actions/settings -->
+        
+        <div id="profile" class="settings">
+            
+            <div id="userProfileHeader" class="hbox">
+                <div>
+                    <div class="avatar">
+                        <img src="i/andy.png">
+                    </div>
+                </div>
+                <div class="username boxFlex overflow">James Burke</div>
+                <div id="actions"><button class="red">add</button></div>
+            </div>
+            
+            <ul id="menu">
+                <li class="hbox">
+                    <label for="twitter" class="boxFlex">Twitter</label>
+                    <div id="twitter"><a href="#">@jrburke</a></div>
+                </li>
+                <li class="hbox">
+                    <label for="email" class="boxFlex">Email</label>
+                    <div id="email"><a href="#">jrburk3@gmail.com</a></div>
+                </li>
+                <li class="hbox">
+                    <label for="url" class="boxFlex">URL</label>
+                    <div id="url"><a href="#">requirejs.org</a></div>
+                </li>
+            </ul>
+        
+        </div>
+
+        <!-- alert to be used for notifications or errors -->
+        <div id="alert">
+            <div class="notificationWrapper">
+                <div class="notification">
+                    <p class="confirm">This will add PERSONNAME to your contacts.</p>
+                    <p>Do you wish to continue?</p>
+                    <button class="red">Add PERSONNAME</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
