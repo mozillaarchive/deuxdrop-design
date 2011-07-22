@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+    <title>Deuxdrop</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen"> 
+    <script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script> 
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function () {
+        $(".next").css("visibility", "hidden");
+        $(".back").click(function () {
+            window.top.location.href = "people.html";
+        });
+
+        var person = decodeURIComponent(window.location.href.slice(window.location.href.indexOf('?') + 1));
+        $("#navTitle").text(person).css("text-transform", "captialize")
+        $(".sender").each(function () {
+            if ($(this).data("person") != person) {
+                $(this).hide();
+            }
+        });
+        $(".sender").click(function () {
+            window.top.location.href = "profile.html?" + person;
+        });
+      });
+    </script> 
+</head>
+<body>
+    
+    <div id="wrapper">
+        <!-- header element -->
+        <div id="header" class="hbox">
+            <button class="back">Back</button>
+            <div class="boxFlex">
+                <h1 id="navTitle" class="overflow">People</h1>
+            </div>
+            <button class="next">Info</button>
+
+        </div>
+
+        <div class="subHeader hbox">
+            <div class="boxFlex">
+                <input id="search" type="text" placeholder="search messages">
+            </div>
+            <button class="search">search</button>
+        </div>
+
+        <ul id="privateChat" class="conversation">
+            <li class="sender hbox" data-person="Andy Chung">
+                <div class="vbox">
+                    <div class="avatar"><img src="i/andy.png"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="msg boxFlex">
+                    <div class="msgHeader hbox">
+                        <span class="author boxFlex overflow">Andy Chung</span>                       
+                        <span class="time">20 sec</span>
+                    </div>
+                    <ul class="messages">
+                        <li class="message">Hey James</li>
+                        <li class="message">What time do you want us to come over to help you move?</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sender hbox" data-person="James Burke">
+                <div class="vbox">
+                    <div class="avatar"><img src="i/james.png"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="msg boxFlex">
+                    <div class="msgHeader hbox">
+                        <span class="author boxFlex overflow">James Burke</span>                       
+                        <span class="time">just now</span>
+                    </div>
+                    <ul class="messages">
+                        <li class="message">Hey</li>
+                        <li class="message">How does 10am sound?</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
