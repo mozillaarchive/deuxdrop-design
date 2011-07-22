@@ -151,7 +151,7 @@ a {
     text-align: center;
 }
 
-.subHeader,
+#subHeader,
 #compose {
     height: 34px;
     line-height: 24px;
@@ -164,7 +164,7 @@ a {
     z-index: 100;
 }
 
-.subHeader {
+#subHeader {
     border-bottom: 1px solid #aaa;
     
     -webkit-box-shadow: 0 2px 0 rgba(150, 150, 150, 0.15);
@@ -203,7 +203,7 @@ a {
     vertical-align: middle;
 }
 
-.subHeader button,
+#subHeader button,
 #compose button {
     background-color: #EEEEEE;
     border-width: 1px;
@@ -239,7 +239,7 @@ a {
                                            #516B95 100%);
 }
 
-.subHeader button.search {
+#subHeader button.search {
     border-radius: 0 3px 3px 0;
     margin: 0;
 }
