@@ -9,47 +9,29 @@
     <script type="text/javascript" charset="utf-8">
       $(document).ready(function () {
         $(".back, .next").css("visibility", "hidden");
-        $(".box").click(function () {
+        $(".homeNav").click(function () {
           window.top.location.href = $(this).data("type") + ".html";
         });
       });
     </script> 
-    <style type="text/css">
-    .box {
-      outline: 1px solid #aaa;
-      width: 160px;
-      height: 238px;
-      text-align: center;
-      line-height: 238px;
-      cursor: pointer;
-    }
-    </style>
 </head>
 <body>
     
-    <div id="wrapper">
+    <div id="wrapper" class="mobile">
         <!-- header element -->
         <div id="header" class="hbox">
             <button class="back">Back</button>
             <div class="boxFlex">
-                <h1 id="navTitle" class="overflow">deuxdrop</h1>
+                <h1 id="navTitle" class="overflow">Deuxdrop</h1>
             </div>
             <button class="next">Info</button>
         </div>
 
-        <div class="vbox boxFlex1">
-          <div>
-            <div class="hbox boxFlex">
-              <a class="box" data-type="people">People</a>
-              <a class="box" data-type="groups">Groups</a>
-            </div>
-          </div>
-          <div>
-            <div class="hbox boxFlex">
-              <a class="box boxFlex" data-type="notifications">Notifications</a>
-              <a class="box boxFlex" data-type="add">+</a>
-            </div>
-          </div>
+        <div id="home">
+            <a class="homeNav" data-type="people">People</a>
+            <a class="homeNav" data-type="groups">Groups</a>
+            <a class="homeNav" data-type="notifications">Notifications</a>
+            <a class="homeNav" data-type="add">+</a>
         </div>
 
     </div>
