@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+    <title>Deuxdrop</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen"> 
+    <script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script> 
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function () {
+        $(".next").css("visibility", "hidden");
+        $(".back").click(function () {
+            if (document.referrer) {
+                window.location  = document.referrer;
+            } else {
+                window.location = "groups.html";
+            }
+        });
+
+        var people = decodeURIComponent(window.location.href.slice(window.location.href.indexOf('?') + 1)).split(",");
+
+        // hide the invitees and keep track of our extra people
+        var others = 0; $(".invitees").hide();
+        // add authors in order and then just count them out
+        for(var i = 0; i < people.length; i++) {
+            if (i < 2) {
+                $(".participants").prepend($("<span class='author'/>").text(people[i] + ", "));
+            } else {
+                console.log("i", i);
+                others++;
+            }
+        }
+        // if there were more people than we wanted to show put them in the invitees
+        if (others > 0) {
+            $(".invitees").show();
+            $(".invitees .others").text(others);
+            if (others < 2) {
+                $(".invitees .plural").text($(".invitees .plural").text().replace(/s$/,""));
+            }
+        }
+        // for every sender listed below check that our conversation includes them
+        // this just hides the messages that are from people not included in the people list
+        $(".sender").each(function () {
+            $(this).hide();
+            var p = $(this).data("person");
+            if (people.some(function(e) { return e == p; } )) {
+                $(this).show();
+            }
+        });
+        $(".sender").click(function () {
+            window.location = "profile.html?" + $(this).data("person");
+        });
+      });
+    </script> 
+</head>
+<body>
+    
+    <div id="wrapper">
+        <!-- header element -->
+        <div id="header" class="hbox">
+            <button class="back">Back</button>
+            <div class="boxFlex">
+                <h1 id="navTitle" class="overflow">Conversation</h1>
+            </div>
+            <button class="next">Info</button>
+
+        </div>
+
+        <div class="subHeader">
+            <div class="participants">
+                <span class="invitees">
+                    <a href="#">+ <span class="others"></span> <span class="plural">others</span></a>
+                </span>
+            </div>
+        </div>
+
+        <div class="subHeader hbox">
+            <div class="boxFlex">
+                <input id="search" type="text" placeholder="search messages">
+            </div>
+            <button class="search">search</button>
+        </div>
+
+        <ul id="groupChat" class="conversation">
+            <li class="sender hbox" data-person="Andy Chung">
+                <div class="vbox">
+                    <div class="avatar"><img src="i/andy.png"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="msg boxFlex">
+                    <div class="msgHeader hbox">
+                        <span class="author boxFlex overflow">Andy Chung</span>
+                        <span class="time">20 sec</span>
+                    </div>
+                    <ul class="messages">
+                        <li class="message">Hey James</li>
+                        <li class="message">What time do you want us to come over to help you move?</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sender hbox" data-person="James Burke">
+                <div class="vbox">
+                    <div class="avatar"><img src="i/james.png"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="msg boxFlex">
+                    <div class="msgHeader hbox">
+                        <span class="author boxFlex overflow">James Burke</span>
+                        <span class="time">just now</span>
+                    </div>
+                    <ul class="messages">
+                        <li class="message">Hey</li>
+                        <li class="message">How does 10am sound?</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sender hbox" data-person="Bryan Clark">
+                <div class="vbox">
+                    <div class="avatar"><img src="i/bryan.png"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="msg boxFlex">
+                    <div class="msgHeader hbox">
+                        <span class="author boxFlex overflow">Bryan Clark</span>
+                        <span class="time">just now</span>
+                    </div>
+                    <ul class="messages">
+                        <li class="message">I'm getting hungry, is it time for lunch yet?</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sender hbox" data-person="David Ascher">
+                <div class="vbox">
+                    <div class="avatar"><img src="i/david.png"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="msg boxFlex">
+                    <div class="msgHeader hbox">
+                        <span class="author boxFlex overflow">David Ascher</span>
+                        <span class="time">just now</span>
+                    </div>
+                    <ul class="messages">
+                        <li class="message">I'm going to be out of town for the next couple weeks</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sender hbox" data-person="Jean Reily">
+                <div class="vbox">
+                    <div class="avatar"><img src="i/jean.png"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="msg boxFlex">
+                    <div class="msgHeader hbox">
+                        <span class="author boxFlex overflow">Jean Reily</span>                       
+                        <span class="time">just now</span>
+                    </div>
+                    <ul class="messages">
+                        <li class="message">I'm always in Vancouver</li>
+                        <li class="message">I need to update my lattitude location or travel some more.</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+</body>
+</html>

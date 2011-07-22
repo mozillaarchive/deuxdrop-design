@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+    <title>Deuxdrop</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen"> 
+    <script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script> 
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function () {
+        $(".next").css("visibility", "hidden");
+        $(".back").click(function () {
+            if (document.referrer) {
+                window.location = document.referrer;
+            } else {
+                window.location = "index.html";
+            }
+        });
+        $(".back").click(function () {
+        });
+        $("li.public").click(function () {
+            window.location = ("conversation.html?" + $(this).data("conversation"));
+        });
+      });
+    </script> 
+</head>
+<body>
+    
+    <div id="wrapper">
+        <!-- header element -->
+        <div id="header" class="hbox">
+            <button class="back">Back</button>
+            <div class="boxFlex">
+                <h1 id="navTitle" class="overflow">Group Conversations</h1>
+            </div>
+            <button class="next">Info</button>
+
+        </div>
+
+        <div class="subHeader hbox">
+            <div class="boxFlex">
+                <input id="search" type="text" placeholder="search groups">
+            </div>
+            <button class="search">search</button>
+            <button class="notify">new</button>
+        </div>
+
+        <!-- group inbox list view -->
+        <ul id="groupInbox" class="conversations">
+            
+            <li class="public unread hbox" data-conversation="Jean Reily,Andy Chung,James Burke,Bryan Clark">
+                <div class="vbox">
+                    <div class="avatar"><img src="i/group.png"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="msgPreview boxFlex">
+                    <div class="msgPreviewHeader hbox">
+                        <span class="author boxFlex overflow">Riley, Andy, James, Bryan</span> 
+                        <span class="participants">&amp; 10 others</span>
+                        <span class="new">(2)</span>
+                        <div class="boxFlexStrong"></div>
+                        <span class="time">23 min</span>
+                    </div>
+                    <div class="hbox">
+                        <div class="snippet boxFlex overflow">
+                            This is a snippet of text from the latest msg
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="public read hbox" data-conversation="Andy Chung,David Ascher,Bryan Clark">
+                <div class="vbox">
+                    <div class="avatar"><img src="i/group.png"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="msgPreview boxFlex">
+                    <div class="msgPreviewHeader hbox">
+                        <span class="author boxFlex overflow">Andy, David, Bryan</span> 
+                        <div class="boxFlexStrong"></div>
+                        <span class="time">23 min</span>
+                    </div>
+                    <div class="hbox">
+                        <div class="snippet boxFlex overflow">
+                            This is a snippet of text from the latest msg
+                        </div>
+                    </div>
+                </div>
+            </li>  
+        </ul>
+
+    </div>
+
+</body>
+</html>

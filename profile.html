@@ -22,7 +22,11 @@
         var username = person.split(" ")[0].toLowerCase();
 
         $(".back").click(function () {
-            window.top.location.href = "person.html?" + person;
+            if (document.referrer) {
+                window.location  = document.referrer;
+            } else {
+                window.location = "person.html?" + person;
+            }
         });
 
         $("#navTitle, .username").text(person).css("text-transform", "captialize")
